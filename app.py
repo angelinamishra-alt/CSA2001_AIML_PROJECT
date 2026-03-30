@@ -1,12 +1,11 @@
-from resume_reader import extract_text_from_pdf, clean_text
+from job_description import extract_skills_from_jd
 
-file = "sample_resume.pdf"
+jd = """
+We are looking for a candidate with Python, SQL and Machine Learning skills.
+Knowledge of Git and GitHub is required.
+"""
 
-text = extract_text_from_pdf(file)
-cleaned_text = clean_text(text)
+skills = extract_skills_from_jd(jd)
 
-print("RAW TEXT:\n")
-print(text[:500])
-
-print("\nCLEANED TEXT:\n")
-print(cleaned_text[:500])
+print("Skills found:")
+print(skills)
